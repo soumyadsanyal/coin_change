@@ -1,5 +1,4 @@
-"""Instance of Currency, initialized with hash specifying values of quarters,
-dimes, nickels and pennies.
+"""USD as instance of Currency.
 """
 
 from coin_change.currency import Currency

@@ -15,7 +15,7 @@ Overrides:
     assertions)
     __add__: combines two bags of a certain currency by adding the coins of each
     denomination in each
-    __repr__: represents the bag by a dictionary of denomination:count pairs
+    __repr__: string representation of bag by a dictionary of denomination:count pairs
 """
 
 from copy import deepcopy
@@ -24,7 +24,7 @@ class Bag(object):
     """Bag of coins, parametrized by denomination."""
 
     def __init__(self, currency, amount=0):
-        """config records how many coins of each denomination is in the bag"""
+        """config hash records how many coins of each denomination is in the bag"""
         self.currency = currency
         self.config = {coin:0 for coin in self.currency.denominations}
         self.amount = amount
@@ -61,14 +61,14 @@ class Bag(object):
         return self.coin_count < other.coin_count
 
     def __add__(self, other):
-        """returns new instance and does not modify self"""
+        """note this returns a new instance and does not modify self"""
         _self = deepcopy(self)
         for coin in _self.config:
             _self.config[coin] += other.config[coin]
         return _self
 
     def __eq__(self, other):
-        """equality on configs"""
+        """equality is defined as equality on configs"""
         return self.config == other.config
 
     def __repr__(self):

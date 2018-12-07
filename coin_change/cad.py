@@ -1,5 +1,4 @@
-"""Instance of Currency, initialized with hash specifying values of
-half-loonies, quarters, dimes, nickels and pennies.
+"""CAD as Instance of Currency.
 """
 
 from coin_change.currency import Currency
